@@ -6,3 +6,7 @@ function bookNow(service) {
         window.location.href = 'waiver.html';
     }
 }
+
+function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
