@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FunZone Sports & Activities</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/icon.jpg" alt="FunTLH Logo">
+      <h1>FunZone</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#gokart">Go-Kart</a></li>
+        <li><a href="#paintball">Paintball</a></li>
+        <li><a href="#courts">Courts</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+  <div class="hero-container">
+    <!-- Text Content -->
+    <div class="hero-text">
+      <h1>Unleash the Fun at <span class="highlight">FunZone</span></h1>
+      <p>Book exciting activities like paintball, go-karts, and more. Perfect for birthdays, team building, and adventure seekers!</p>
+      <div class="hero-buttons">
+        <a href="#activities" class="btn-primary">Explore Activities</a>
+        <a href="#book" class="btn-secondary">Book Now</a>
+      </div>
+    </div>
+
+ 
+  </div>
+</section>
+
+  <section id="gokart">
+    <div class="card">
+      <div class="column">
+        <img src="assets/gokarting.jpg" alt="Go-Kart Racing">
+      </div>
+      <div class="column">        
+        <h2>Go-Kart Racing</h2>
+        <p>High-speed fun for friends and families. Races available in 10-minute sessions.</p>
+        <p><strong>🟢 Standard Race – $8</strong><br>A single 4-minute race including all gear.</p>
+        <p><strong>🟢 Double Race – $14</strong><br>Two 8-minute races. Share one with a friend!</p>
+        <button class="btn-primary" onclick="bookNow('Go-Kart')">Book Now</button>
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="paintball">
+    <div class="card">
+      
+      <div class="column">
+      <div>
+        <h2>Paintball Arena</h2>
+        <p>Team up and battle it out in our massive outdoor paintball arena.</p>
+        <p> <strong>Max Capacity:</strong> 10 Players per Session</p>
+        <p> <strong>Minimum Group Size: </strong>4 Players</p>  
+        <p><strong>Reservation Required</strong></p>
+      </div>
+      <button class="btn-primary" onclick="bookNow('Paintball')">Book Now</button>
+      </div>
+      <div class="column">
+        <img src="assets/paintball-field.jpg" alt="Paintball Arena">
+      </div>
+    </div>
+  </section>
+
+  <section id="indoor-soccer">
+    <div class="card">
+      <div class="column">
+        <img src="assets/indoor-soccer.jpg" alt="Indoor Soccer">
+      </div>
+      <div class="column">
+       <div>
+         <h2>Rent a Court</h2>
+          <p>Reserve our professional-grade soccer and basketball courts for your team or event.</p>
+       </div>
+      <button class="btn-primary" onclick="bookNow('Court Rental')">Book Now</button>
+      </div>
+    </div>
+  </section>
+  <section id="courts">
+    <div class="card">
+      <div class="column">
+      <div>
+        <h2>Rent a Court</h2>
+        <p>Reserve our professional-grade soccer and basketball courts for your team or event.</p>
+      </div>
+      <button class="btn-primary" onclick="bookNow('Court Rental')">Book Now</button>
+      </div>
+      <div class="column">
+         <img src="assets/gym1.jpeg" alt="Basketball Court"> 
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+   <div class="contact-card">
+    <div class="contact-title">📇 Contact Us</div>
+    <div class="contact-info">
+      <a href="tel:+15632494566">
+        <span>📞</span> +1 (563) 249-4566
+      </a>
+      <a href="mailto:admission@tlhschools.org">
+        <span>📧</span> admission@tlhschools.org
+      </a>
+    </div>
+  </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FunZone. All rights reserved.</p>
+  </footer>
+  <script type="text/javascript" src="script.js"></script>
+  
+</body>
+</html>
