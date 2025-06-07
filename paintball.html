@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Paintball | FunZone</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="paintball-style.css">
+   
 </head>
 <body>
   <header class="bg-dark text-white py-3 px-4 d-flex justify-content-between align-items-center">
@@ -21,9 +22,61 @@
       </ul>
     </nav>
   </header>
+  
+
+
+  <section id="paintballHero">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active bg-cover" style="background-image: url('assets/camping2.jpeg');">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <h1 class="display-4 fw-bold">Paintball Adventure Awaits</h1>
+          <p class="lead">Fast-paced. Strategic. Pure adrenaline.</p>
+          <a href="#bookingForm" class="btn btn-danger btn-lg mt-3">Book Now</a>
+        </div>
+      </div>
+
+      <div class="carousel-item bg-cover" style="background-image: url('assets/paintball-field.jpg');">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <h1 class="display-4 fw-bold">Outdoor Arena Battles</h1>
+          <p class="lead">Built for teams, friends, and thrill-seekers.</p>
+          <a href="#bookingForm" class="btn btn-danger btn-lg mt-3">Reserve Now</a>
+        </div>
+      </div>
+
+      <div class="carousel-item bg-cover" style="background-image: url('assets/gym1.jpeg');">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <h1 class="display-4 fw-bold">Gear Up and Dominate</h1>
+          <p class="lead">High-energy paintball action for all ages.</p>
+          <a href="#bookingForm" class="btn btn-danger btn-lg mt-3">Join the Action</a>
+        </div>
+      </div>
+
+      <div class="carousel-item bg-cover" style="background-image: url('assets/gym5.jpeg');">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+          <h1 class="display-4 fw-bold">Your Squad vs. the World</h1>
+          <p class="lead">Book private sessions for birthdays & events.</p>
+          <a href="#bookingForm" class="btn btn-danger btn-lg mt-3">Let's Go!</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+
 
   <main class="container my-5">
-    <section class="row bg-white shadow rounded p-4 align-items-center">
+    <!-- <section class="row bg-white shadow rounded p-4 align-items-center">
       <div class="col-md-6 order-md-2">
         <img src="assets/paintball-field.jpg" alt="Paintball Arena" class="img-fluid rounded">
       </div>
@@ -40,7 +93,7 @@
           <a href="#calendar" class="btn btn-outline-primary">See Openings</a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="mt-5">
       <h3 class="mb-4">🎯 Paintball Packages & Pricing</h3>
@@ -141,6 +194,61 @@
       <iframe src="https://calendar.google.com/calendar/embed?src=c_f8ce034d3d858842b48710012fc426d5f0427dc2f2819a2dee98eb9f965cb3c9%40group.calendar.google.com&ctz=America%2FChicago" 
               style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
     </section>
+    <section class="mt-5">
+       <!-- refgister form -->
+  <form id="bookingForm" class="bg-white shadow p-4 full-width-form">
+      <h4 class="mb-3">👤 Participant Information</h4>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="col-md-4">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" required>
+        </div>
+        <div class="col-md-4">
+          <label for="players" class="form-label">Number of Players</label>
+          <input type="number" class="form-control" id="players" min="1" max="10" required>
+        </div>
+        <div class="col-md-4">
+          <label for="date" class="form-label">Preferred Date</label>
+          <input type="date" class="form-control" id="date" required>
+        </div>
+      </div>
+
+      <h4 class="mt-4">📦 Choose a Package</h4>
+      <select class="form-select mb-3" id="package" required>
+        <option value="" selected disabled>Select a package</option>
+        <option value="basic">BASIC ENTRY PACKAGE – $35/player</option>
+        <option value="deluxe">DELUXE ENTRY PACKAGE – $50/player</option>
+        <option value="private">PRIVATE GROUP PACKAGE – $300 total</option>
+      </select>
+
+      <h4 class="mt-4">📝 Waiver Agreement</h4>
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="agree" required>
+        <label class="form-check-label" for="agree">
+          I confirm that <strong>each player in my group</strong> has read and agreed to the waiver below:
+          <ul>
+            <li>Paintball is a high-intensity sport that carries a risk of injury (e.g. bruises, sprains, welts).</li>
+            <li>All participants engage voluntarily and knowingly accept these risks.</li>
+            <li>FunZone and its employees are <strong>not liable</strong> for injuries, losses, or damages that may occur.</li>
+            <li>I/we understand and accept these conditions and will follow all safety instructions provided on-site.</li>
+          </ul>
+        </label>
+      </div>
+
+      <h4 class="mt-4">💳 Deposit</h4>
+      <p>A deposit of <strong>$10 per player</strong> is required to confirm your booking. You will receive payment instructions via email after submitting this form.</p>
+
+      <button type="submit" class="btn btn-primary mt-3">Submit Booking</button>
+    </form>
+    </section>
   </main>
 
   <!-- Waiver Modal -->
@@ -180,6 +288,9 @@
       </div>
     </div>
   </div>
+
+ 
+
 
   <footer class="bg-dark text-white text-center py-3 mt-5">
     &copy; 2025 FunZone. All rights reserved.

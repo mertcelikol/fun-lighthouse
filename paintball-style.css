@@ -1,0 +1,23 @@
+#paintballHero .carousel-item {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#paintballHero .carousel-caption {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  #paintballHero .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  #paintballHero .carousel-caption p {
+    font-size: 1rem;
+  }
+}

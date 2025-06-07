@@ -106,14 +106,7 @@ section {
     margin: 1rem 0; 
     display: block;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: auto;
-}
+ 
 
 input, textarea {
     padding: 1rem;
