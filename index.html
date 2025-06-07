@@ -2,129 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FunZone Sports & Activities</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/icon.jpg" alt="FunTLH Logo">
-      <h1>FunZone</h1>
+  <header class="bg-dark text-white py-3 px-4 d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center gap-3">
+      <img src="assets/icon.jpg" alt="FunTLH Logo" width="40" height="40">
+      <h1 class="h4 m-0">FunZone</h1>
     </div>
     <nav>
-      <div class="burger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul id="nav-links">
-        <li><a href="#gokart">Go-Kart</a></li>
-        <li><a href="#paintball">Paintball</a></li>
-        <li><a href="#courts">Courts</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <button class="navbar-toggler d-md-none" type="button" onclick="toggleMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="nav d-none d-md-flex" id="nav-links">
+        <li class="nav-item"><a class="nav-link text-white" href="#gokart">Go-Kart</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#paintball">Paintball</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#courts">Courts</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
-
   <section class="hero-section">
   <div class="hero-container">
-    <!-- Text Content -->
     <div class="hero-text">
       <h1>Unleash the Fun at <span class="highlight">FunZone</span></h1>
-      <p>Book exciting activities like paintball, go-karts, and more. Perfect for birthdays, team building, and adventure seekers!</p>
+      <p>Book exciting activities...</p>
       <div class="hero-buttons">
         <a href="#activities" class="btn-primary">Explore Activities</a>
         <a href="#book" class="btn-secondary">Book Now</a>
       </div>
     </div>
-
- 
   </div>
 </section>
 
-  <section id="gokart">
-    <div class="card">
-      <div class="column">
-        <img src="assets/gokarting.jpg" alt="Go-Kart Racing">
+  <main class="container my-4">
+    <section id="gokart" class="mb-4">
+      <div class="row bg-white shadow rounded p-4 align-items-center">
+        <div class="col-md-6">
+          <img src="assets/gokarting.jpg" alt="Go-Kart Racing" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h2>Go-Kart Racing</h2>
+          <p>High-speed fun for friends and families. Races available in 10-minute sessions.</p>
+          <p><strong>🟢 Standard Race – $8</strong><br>A single 4-minute race including all gear.</p>
+          <p><strong>🟢 Double Race – $14</strong><br>Two 8-minute races. Share one with a friend!</p>
+          <button class="btn btn-primary" onclick="bookNow('Go-Kart')">Book Now</button>
+        </div>
       </div>
-      <div class="column">        
-        <h2>Go-Kart Racing</h2>
-        <p>High-speed fun for friends and families. Races available in 10-minute sessions.</p>
-        <p><strong>🟢 Standard Race – $8</strong><br>A single 4-minute race including all gear.</p>
-        <p><strong>🟢 Double Race – $14</strong><br>Two 8-minute races. Share one with a friend!</p>
-        <button class="btn-primary" onclick="bookNow('Go-Kart')">Book Now</button>
-      </div>
-      
-    </div>
-  </section>
+    </section>
 
-  <section id="paintball">
-    <div class="card">
-      
-      <div class="column">
-      <div>
-        <h2>Paintball Arena</h2>
-        <p>Team up and battle it out in our massive outdoor paintball arena.</p>
-        <p> <strong>Max Capacity:</strong> 10 Players per Session</p>
-        <p> <strong>Minimum Group Size: </strong>4 Players</p>  
-        <p><strong>Reservation Required</strong></p>
+    <section id="paintball" class="mb-4">
+      <div class="row bg-white shadow rounded p-4 align-items-center">
+        <div class="col-md-6 order-md-2">
+          <img src="assets/paintball-field.jpg" alt="Paintball Arena" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h2>Paintball Arena</h2>
+          <p>Team up and battle it out in our massive outdoor paintball arena.</p>
+          <p><strong>Max Capacity:</strong> 10 Players per Session</p>
+          <p><strong>Minimum Group Size:</strong> 4 Players</p>  
+          <p><strong>Reservation Required</strong></p>
+          <button class="btn btn-primary" onclick="bookNow('Paintball')">Book Now</button>
+        </div>
       </div>
-      <button class="btn-primary" onclick="bookNow('Paintball')">Book Now</button>
-      </div>
-      <div class="column">
-        <img src="assets/paintball-field.jpg" alt="Paintball Arena">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="indoor-soccer">
-    <div class="card">
-      <div class="column">
-        <img src="assets/indoor-soccer.jpg" alt="Indoor Soccer">
-      </div>
-      <div class="column">
-       <div>
-         <h2>Rent a Court</h2>
+    <section id="courts" class="mb-4">
+      <div class="row bg-white shadow rounded p-4 align-items-center">
+        <div class="col-md-6">
+          <img src="assets/gym1.jpeg" alt="Basketball Court" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h2>Rent a Court</h2>
           <p>Reserve our professional-grade soccer and basketball courts for your team or event.</p>
-       </div>
-      <button class="btn-primary" onclick="bookNow('Court Rental')">Book Now</button>
+          <button class="btn btn-primary" onclick="bookNow('Court Rental')">Book Now</button>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="courts">
-    <div class="card">
-      <div class="column">
-      <div>
-        <h2>Rent a Court</h2>
-        <p>Reserve our professional-grade soccer and basketball courts for your team or event.</p>
-      </div>
-      <button class="btn-primary" onclick="bookNow('Court Rental')">Book Now</button>
-      </div>
-      <div class="column">
-         <img src="assets/gym1.jpeg" alt="Basketball Court"> 
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-   <div class="contact-card">
-    <div class="contact-title">📇 Contact Us</div>
-    <div class="contact-info">
-      <a href="tel:+15632494566">
-        <span>📞</span> +1 (563) 249-4566
-      </a>
-      <a href="mailto:admission@tlhschools.org">
-        <span>📧</span> admission@tlhschools.org
-      </a>
-    </div>
-  </div>
-  </section>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 FunZone. All rights reserved.</p>
+    <section id="contact" class="mb-5">
+      <div class="bg-white shadow rounded p-4 text-center">
+        <h3 class="mb-3">📇 Contact Us</h3>
+        <div class="d-flex flex-column gap-2">
+          <a href="tel:+15632494566" class="text-decoration-none text-dark"><span>📞</span> +1 (563) 249-4566</a>
+          <a href="mailto:admission@tlhschools.org" class="text-decoration-none text-dark"><span>📧</span> admission@tlhschools.org</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    &copy; 2025 FunZone. All rights reserved.
   </footer>
-  <script type="text/javascript" src="script.js"></script>
-  
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

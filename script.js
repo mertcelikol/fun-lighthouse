@@ -1,7 +1,7 @@
 
 function bookNow(service) {
-    if (service === 'Go-Kart') {
-        window.location.href = 'go-kart.html';
+    if (service === 'Paintball') {
+        window.location.href = 'paintball.html';
     } else {
         window.location.href = 'waiver.html';
     }
