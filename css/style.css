@@ -377,12 +377,44 @@ a:focus, a:hover {
   display: inline-block;
 }
 
-.single-page-header {
-  background-image: url("../assets/single-page-header.jpg");
+/* video background */
+.header-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Adjust this to match actual cropped video height */
+  overflow: hidden;
+}
+
+.header-video-wrapper video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  height: auto;
+}
+ 
+.content-overlay {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+/* video background ends */
+
+
+
+.single-page-header { 
+  background-image: url("../assets/paintball-figth.mp4");
   background-size:100%;
   padding: 140px 0 70px;
   text-align: center;
-  color: #fff;
+  color: #fff; 
   position: relative;
 }
 .single-page-header:before {
