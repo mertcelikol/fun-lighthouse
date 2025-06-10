@@ -331,103 +331,113 @@ Start About Section
 	</div> <!-- End container -->
 </section> <!-- End section -->
 
-
-
-<section id="calendar" class="mt-5 container-fluid">
-      <div class="row justify-content-center">
+<div class="row justify-content-center mt-5">
 			<div class="col-xl-6 col-lg-8">
 				<div class="title text-center">
-					<h2>Calendar</h2>
+					<h2>Booking</h2>
 					<div class="border"></div>
 				</div>
 			</div>
 		</div>
-      <iframe src="https://calendar.google.com/calendar/embed?src=c_f8ce034d3d858842b48710012fc426d5f0427dc2f2819a2dee98eb9f965cb3c9%40group.calendar.google.com&ctz=America%2FChicago" 
-              style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-    </section>
-<section class="p-4"> <!-- form -->
-	<form id="bookingForm" class="container bg-white shadow p-4 rounded">
-	<h3 class="mb-4">🎯 Paintball Booking Form</h3>
-
-	<div class="form-row g-3">
-		<div class="col-md-6">
-		<label for="organizerName" class="form-label">Your Full Name</label>
-		<input type="text" class="form-control" id="organizerName" required>
-		</div>
-		<div class="col-md-6">
-		<label for="organizerEmail" class="form-label">Your Email</label>
-		<input type="email" class="form-control" id="organizerEmail" required>
-		</div>
-
-		<div class="col-md-4">
-		<label for="players" class="form-label">Number of Players</label>
-		<input type="number" class="form-control" id="players" min="1" max="20" required>
-		</div>
-		<div class="col-md-4">
-		<label for="date" class="form-label">Preferred Date</label>
-		<input type="date" class="form-control" id="date" required>
-		</div>
-		<div class="form-group col-md-4">
-		<label for="timeSlot" class="form-label">Preferred Time Slot</label>
-		<select class="form-control" id="timeSlot" required>
-			<option value="" selected disabled>Choose time</option>
-			<option>10:00 AM - 12:00 PM</option>
-			<option>12:30 PM - 2:30 PM</option>
-			<option>3:00 PM - 5:00 PM</option>
-			<option>5:30 PM - 7:30 PM</option>
-		</select>
-		</div>
+<div class="row">
+	<div class="col-6 pt-4">		
+		<section id="calendar" class="container-fluid">
+			
+			<iframe src="https://calendar.google.com/calendar/embed?src=c_f8ce034d3d858842b48710012fc426d5f0427dc2f2819a2dee98eb9f965cb3c9%40group.calendar.google.com&ctz=America%2FChicago" 
+					style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+		</section>
 	</div>
+	<div class="col-6">
+		<section class="p-4"> <!-- form -->
+			<form id="bookingForm" class="container bg-white shadow p-4 rounded">
+		
+			<div class="form-row g-3">
+				<div class="col-md-6">
+				<label for="organizerName" class="form-label">Your Full Name</label>
+				<input type="text" class="form-control" id="organizerName" required>
+				</div>
+				<div class="col-md-6">
+				<label for="organizerEmail" class="form-label">Your Email</label>
+				<input type="email" class="form-control" id="organizerEmail" required>
+				</div>
 
-	<div id="playerFields" class="mt-4"></div>
-
-	<h5 class="mt-4">📦 Choose a Package</h5>
-	<select class="form-control mb-3" id="package" required>
-		<option value="" selected disabled>Select a package</option>
-		<option value="basic">BASIC PACKAGE – $35/player</option>
-		<option value="deluxe">DELUXE PACKAGE – $50/player</option>
-		<option value="private">PRIVATE GROUP – $300 total</option>
-	</select>
-
-	
-
-	<h5 class="mt-4">💳 Deposit</h5>
-	<p>A <strong>$10 deposit per player</strong> is required. Payment instructions will be emailed to you.</p>
-
-	<button type="submit" class="btn btn-primary mt-3">Submit Booking</button>
-	</form>
-	<script>
-	document.getElementById('players').addEventListener('change', function () {
-		const count = parseInt(this.value);
-		const container = document.getElementById('playerFields');
-		container.innerHTML = '';
-
-		if (isNaN(count) || count < 1) return;
-
-		for (let i = 1; i <= count; i++) {
-		const row = document.createElement('div');
-		row.className = 'row g-3 mb-3';
-		row.innerHTML = `
-			<h6>Player ${i}</h6>
-			<div class="col-md-3">
-			<label class="form-label">First Name</label>
-			<input type="text" class="form-control" name="player${i}First" required>
+				<div class="col-md-4">
+				<label for="players" class="form-label">Number of Players</label>
+				<input type="number" class="form-control" id="players" min="1" max="20" required>
+				</div>
+				<div class="col-md-4">
+				<label for="date" class="form-label">Preferred Date</label>
+				<input type="date" class="form-control" id="date" required>
+				</div>
+				<div class="form-group col-md-4">
+				<label for="timeSlot" class="form-label">Preferred Time Slot</label>
+				<select class="form-control" id="timeSlot" required>
+					<option value="" selected disabled>Choose time</option>
+					<option>10:00 AM - 12:00 PM</option>
+					<option>12:30 PM - 2:30 PM</option>
+					<option>3:00 PM - 5:00 PM</option>
+					<option>5:30 PM - 7:30 PM</option>
+				</select>
+				</div>
 			</div>
-			<div class="col-md-3">
-			<label class="form-label">Last Name</label>
-			<input type="text" class="form-control" name="player${i}Last" required>
-			</div>
-			<div class="col-md-4">
-			<label class="form-label">Email</label>
-			<input type="email" class="form-control" name="player${i}Email" required>
-			</div>
-		`;
-		container.appendChild(row);
-		}
-	});
-	</script>
-</section><!-- form end -->
 
+			<div id="playerFields" class="mt-4"></div>
+
+			<h5 class="mt-4">📦 Choose a Package</h5>
+			<select class="form-control mb-3" id="package" required>
+				<option value="" selected disabled>Select a package</option>
+				<option value="basic">BASIC PACKAGE – $35/player</option>
+				<option value="deluxe">DELUXE PACKAGE – $50/player</option>
+				<option value="private">PRIVATE GROUP – $300 total</option>
+			</select>
+
+			
+
+			<h5 class="mt-4">💳 Deposit</h5>
+			<p>A <strong>$10 deposit per player</strong> is required. Payment instructions will be emailed to you.</p>
+
+			<button type="submit" class="btn btn-primary mt-3">Submit Booking</button>
+			</form>
+			<script>
+			document.getElementById('players').addEventListener('change', function () {
+				const count = parseInt(this.value);
+				const container = document.getElementById('playerFields');
+				container.innerHTML = '';
+
+				if (isNaN(count) || count < 1) return;
+
+				for (let i = 1; i <= count; i++) {
+				const row = document.createElement('div');
+				row.className = 'row g-3 mb-3';
+				row.innerHTML = `
+					<h6>Player ${i}</h6>
+					<div class="col-md-3">
+					<label class="form-label">First Name</label>
+					<input type="text" class="form-control" name="player${i}First" required>
+					</div>
+					<div class="col-md-3">
+					<label class="form-label">Last Name</label>
+					<input type="text" class="form-control" name="player${i}Last" required>
+					</div>
+					<div class="col-md-4">
+					<label class="form-label">Email</label>
+					<input type="email" class="form-control" name="player${i}Email" required>
+					</div>
+				`;
+				container.appendChild(row);
+				}
+			});
+			</script>
+		</section><!-- form end -->
+	</div>
+</div>
+ <!--================================
+=            Google Map            =
+=================================-->
+<div class="google-map">
+	<div id="map_canvas" class="map_canvas" data-latitude="41.85189899926119" data-longitude="-90.20026231754544" data-marker="images/marker.png" data-marker-name="Bingo"></div>
+</div>
+ <!--====  End of Google Map  ====-->
 <footer id="footer" class="bg-one">
   
   <div class="footer-bottom">
