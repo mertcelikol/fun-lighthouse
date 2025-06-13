@@ -378,6 +378,30 @@ a:focus, a:hover {
 }
 
 /* video background */
+
+@media (max-width: 768px) {
+  .video-background {
+    padding-top: 80px; /* more space under nav on mobile */
+  }
+
+  .content-overlay {
+    padding-top:40%;
+    font-size: 1.5rem;
+  }
+}
+
+/* 📱 Tablet fix */
+@media (min-width: 769px) and (max-width: 980px) {
+  .video-background {
+    padding-top: 80px; /* medium space for tablets */
+  }
+
+  .content-overlay {
+    padding-top:40%;
+    font-size: 2rem;
+  }
+ 
+}
 .header-video-wrapper {
   position: relative;
   width: 100%;
@@ -799,7 +823,9 @@ a:focus, a:hover {
 }
 .nextArrow::after {
   left: 20px;
-}
+} 
+
+
 
 /* /slick arrows */
 /*=================================================================
