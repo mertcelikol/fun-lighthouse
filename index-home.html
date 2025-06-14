@@ -1,590 +1,323 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
+      html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;  /* prevent scrolling inside iframe */
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
 
-<html lang="en">
-<head>
-
-  <!-- Basic Page Needs
-  ================================================== -->
-  <meta charset="utf-8">
-  <title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
-
-  <!-- Mobile Specific Metas
-  ================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="One page parallax responsive HTML Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Bingo HTML Template v1.0">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
-  <!-- CSS
-  ================================================== -->
-  <!-- Themefisher Icon font -->
-  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- Lightbox.min css -->
-  <link rel="stylesheet" href="plugins/lightbox2/css/lightbox.min.css">
-  <!-- animation css -->
-  <link rel="stylesheet" href="plugins/animate/animate.css">
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body id="body">
-
-  <!--
-  Start Preloader
-  ==================================== -->
-  <div id="preloader">
-    <div class='preloader'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <!--
-  End Preloader
-  ==================================== -->
-
-<!--
-Fixed Navigation
-==================================== -->
-<header class="navigation fixed-top">
-  <div class="container">
-    <!-- main nav -->
-    <nav class="navbar navbar-expand-lg navbar-light px-0">
-      <!-- logo -->
-      <a class="navbar-brand logo" href="index.html">
-        <img loading="lazy" class="logo-default" src="images/logo.png" alt="logo" />
-        <img loading="lazy" class="logo-white" src="images/logo-white.png" alt="logo" />
-      </a>
-      <!-- /logo -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navigation">
-        <ul class="navbar-nav ml-auto text-center">
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Homepage <i class="tf-ion-chevron-down"></i>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="index.html">Homepage</a></li>
-              <li><a class="dropdown-item" href="onepage-slider.html">Onepage</a></li>
-              <li><a class="dropdown-item" href="onepage-text.html">Onepage 2</a></li>
-									
-              <li class="dropdown dropdown-submenu dropright">
-                <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu  <i class="tf-ion-chevron-down"></i></a>
       
-                <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                  <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-                  <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="service.html">Services</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="team.html">Team</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="pricing.html">Pricing</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown02" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Pages <i class="tf-ion-chevron-down"></i>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown02">
-              <li><a class="dropdown-item" href="404.html">404 Page</a></li>
-              <li><a class="dropdown-item" href="blog.html">Blog Page</a></li>
-              <li><a class="dropdown-item" href="single-post.html">Blog Single Page</a></li>
-									
-              <li class="dropdown dropdown-submenu dropleft">
-                <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu  <i class="tf-ion-chevron-down"></i></a>
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+      }
+      /* Optional: Make sure your main container uses 100% height and width */
+      #uploadForm {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
       
-                <ul class="dropdown-menu" aria-labelledby="dropdown0201">
-                  <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-                  <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- /main nav -->
-  </div>
-</header>
-<!--
-End Fixed Navigation
-==================================== -->
 
- <!--
-Welcome Slider
-==================================== -->
- <section class="hero-area">
- 	<div class="container">
- 		<div class="row">
- 			<div class="col-md-12">
- 				<div class="block mt-4">
- 					<h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s">We are smart <br> Creative Agency</h1>
- 					<p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur
- 						adipisicing elit. Nulla, ad rerum repellat. Sequi, labore, illo. Ducimus voluptates quidem obcaecati, ad.
- 					</p>
- 					<ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
- 						<li class="list-inline-item">
- 							<a data-scroll href="#services" class="btn btn-main">Explore Us</a>
- 						</li>
- 						<li class="list-inline-item">
- 							<a data-scroll href="#team" class="btn btn-transparent">Learn More</a>
- 						</li>
- 					</ul>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </section>
+      .file-input-wrapper {
+        position: relative;
+        height: 100px;
+        background-color: #f0f0f0;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+        color: #555;
+        transition: background-color 0.2s ease;
+        padding: 10px;
+      }
 
-<!--
-Start About Section
-==================================== -->
-<section class="service-2 section">
-  <div class="container">
-    <div class="row justify-content-center">
+      .file-input-wrapper:hover,
+      .file-input-wrapper.dragover {
+        background-color: #e8f5e9;
+      }
 
-      <div class="col-lg-6">
-        <!-- section title -->
-        <div class="title text-center">
-          <h2>What Do We Offer</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Voluptates, earum. </p>
-          <div class="border"></div>
-        </div>
-        <!-- /section title -->
+      .file-input {
+        display: none;
+      }
+
+      .cloud-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 6px;
+        fill: #777;
+      }
+
+      #progressBar {
+        width: 100%;
+        background-color: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 12px;
+        height: 8px;
+        display: none;
+      }
+
+      #progressFill {
+        height: 100%;
+        width: 0%;
+        background-color: #4CAF50;
+        transition: width 0.3s ease-in-out;
+      }
+
+      #output {
+        margin-top: 10px;
+        font-size: 13px;
+        text-align: center;
+        color: #333;
+      }
+
+      #thankYou {
+      margin: 10px 0 10px 0;
+      display: none; 
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border: 1px solid #c3e6cb;
+      border-radius: 4px;
+       
+    }
+    </style>
+  </head>
+  <body>
+    <div id="uploadForm" style="font-family: 'Poppins', sans-serif;  padding: 40px 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; box-sizing: border-box;">
+      <div style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 100%; max-width: 700px;">
+       
+        <form id="registrationForm">
+          <!-- Applying for -->
+          <div style="font-weight: 500; padding: 12px 0; font-size: 1.2rem;">Applying For</div>
+          
+          <select id="appliedFor" name="appliedFor" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            <option value="">-- Please choose an option --</option>
+            <option value="boarding">Boarding School</option>
+            <option value="online">Online School</option>
+          </select>
+
+          <!-- Student Info -->
+          <div style="font-weight: 500; padding: 12px 0; font-size: 1.2rem;">Student</div>
+          <div style="display: flex; gap: 40px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+              <label for="studentFirstName">First Name</label>
+              <input type="text" id="studentFirstName" name="studentFirstName"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+            <div style="flex: 1;">
+              <label for="studentLastName">Last Name</label>
+              <input type="text" id="studentLastName" name="studentLastName"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+          </div>
+          <div style="display: flex; gap: 40px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+            <div style="flex: 1;">
+              <label for="grade">Current Grade</label>
+              <input type="text" id="grade" name="grade"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+          </div>
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="2"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px;"></textarea>
+
+          <label for="previousSchool">Previous School Name</label>
+          <input type="text" id="previousSchool" name="previousSchool"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 20px;">
+
+          <!-- File Upload -->
+          <label>Report Card Upload</label>
+          <div class="file-input-wrapper" id="fileInputWrapper">
+            <input type="file" id="fileInput" class="file-input">
+            <svg class="cloud-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M19.35 10.04a7.49 7.49 0 0 0-14-2A6 6 0 0 0 6 20h13a5 5 0 0 0 .35-9.96zM12 13v4m0 0l-2-2m2 2l2-2"/>
+            </svg>
+            <span class="file-text">Click or drop a file here</span>
+          </div>
+          <div id="progressBar"><div id="progressFill"></div></div>
+          <p id="output"></p>
+
+          <!-- Parent Info -->
+          <div style="font-weight: 500; padding: 12px 0; font-size: 1.2rem;">Parent/Guardian</div>
+          <div style="display: flex; gap: 40px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+              <label for="parentFirstName">First Name</label>
+              <input type="text" id="parentFirstName" name="parentFirstName"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+            <div style="flex: 1;">
+              <label for="parentLastName">Last Name</label>
+              <input type="text" id="parentLastName" name="parentLastName"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+          </div>
+          <div style="display: flex; gap: 40px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+              <label for="parentPhone">Phone</label>
+              <input type="tel" id="parentPhone" name="parentPhone"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+            <div style="flex: 1;">
+              <label for="parentEmail">Email</label>
+              <input type="email" id="parentEmail" name="parentEmail"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+          </div>
+          <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+              <label for="contactMethod">Preferred Contact</label>
+              <select id="contactMethod" name="contactMethod"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                <option value="">Select</option>
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
+                <option value="Text">Text Message</option>
+              </select>
+            </div>
+            <div style="flex: 1;">
+              <label for="callTime">Preferred Call Time</label>
+              <input type="text" id="callTime" name="callTime"    placeholder="e.g. 10am - 12pm" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            </div>
+          </div>
+          <label for="referralSource">Where did you hear about us?</label>
+          <input type="text" id="referralSource" name="referralSource"    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 25px;">
+          <div id="thankYou">Thank you for submitting!</div>
+          <input type="submit" value="Apply" style="background: #007bff; color: white; border: none; padding: 14px; border-radius: 6px; font-size: 16px; cursor: pointer; width: 100%;">
+        </form>
       </div>
     </div>
-    <div class="row">
 
-      <div class="col-md-4 text-center d-none d-md-block">
-        <img loading="lazy" src="images/about/member.jpg" class="img-fluid inline-block" alt="">
-      </div>
-      <div class="col-md-8">
-        <div class="row text-center">
-          <div class="col-md-6 col-sm-6">
-            <div class="service-item">
-              <i class="tf-ion-ios-alarm-outline"></i>
-              <h4>Time Management</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis.</p>
-            </div>
-          </div><!-- END COL -->
-          <div class="col-md-6 col-sm-6">
-            <div class="service-item">
-              <i class="tf-ion-ios-briefcase-outline"></i>
-              <h4>Marketing Ideas</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis.</p>
-            </div>
-          </div><!-- END COL -->
-          <div class="col-md-6 col-sm-6">
-            <div class="service-item">
-              <i class="tf-ion-ios-email-outline"></i>
-              <h4>Mail Support</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis.</p>
-            </div>
-          </div><!-- END COL -->
-          <div class="col-md-6 col-sm-6">
-            <div class="service-item">
-              <i class="tf-ion-ios-locked-outline"></i>
-              <h4>Secure System</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis.</p>
-            </div>
-          </div><!-- END COL -->
-        </div>
-      </div>
-    </div> <!-- End row -->
-  </div> <!-- End container -->
-</section> <!-- End section -->
+    <script>
+      const fileInputWrapper = document.getElementById("fileInputWrapper");
+      const fileInput = document.getElementById("fileInput");
+      const fileText = fileInputWrapper.querySelector(".file-text");
+      const progressBar = document.getElementById("progressBar");
+      const progressFill = document.getElementById("progressFill");
+      const output = document.getElementById("output");
 
-<!--
-Start About Section
-==================================== -->
-<section class="about-2 section" id="about">
-	<div class="container">
-		<div class="row justify-content-center">
-			<!-- section title -->
-			<div class="col-lg-6">
-				<div class="title text-center">
-					<h2>We Are Bingo Agency</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam reprehenderit accusamus labore iusto,
-						aut, eum itaque illo totam tempora eius.</p>
-					<div class="border"></div>
-				</div>
-			</div>
-			<!-- /section title -->
-		</div>
-
-		<div class="row">
-
-			<div class="col-md-6 mb-4 mb-md-0">
-				<img loading="lazy" src="images/about/about-2.png" class="img-fluid" alt="">
-			</div>
-			<div class="col-md-6">
-				<ul class="checklist">
-					<li>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-					<li>Aenean quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-					<li>Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-					<li>Etiam porta sem multipage evint landing magna mollis euismod a pharetra augue.</li>
-					<li>Aenean quam. Pellentesque ornare sem laca quam venenatis vestibulum.</li>
-				</ul>
-				<a href="about.html" class="btn btn-main mt-20">Learn More</a>
-			</div>
-		</div> <!-- End row -->
-	</div> <!-- End container -->
-</section> <!-- End section -->
-
-<!--
-Start Call To Action
-==================================== -->
-<section class="call-to-action section">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-xl-6 col-lg-8 text-center">
-				<h2>Let's Create Something Together</h2>
-				<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, nisi elit consequat ipsum,
-					nesagittis sem nid elit. Duis sed odio sitain elit.</p>
-				<a href="contact.html" class="btn btn-main">Contact Us</a>
-			</div>
-		</div> <!-- End row -->
-	</div> <!-- End container -->
-</section> <!-- End section -->
-
-<!--
-Start Counter Section
-==================================== -->
-<section class="counter-wrapper section-sm">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-xl-6 col-lg-8 text-center">
-				<div class="title">
-					<h2>Award-Winning Agency</h2>
-					<p>Vestibulum nisl tortor, consectetur quis imperdiet bibendum, laoreet sed arcu. Sed condimentum iaculis ex, in faucibus lorem accumsan non. Donec mattis tincidunt metus. Morbi sed tortor a risus luctus dignissim.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<!-- first count item -->
-			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-				<div class="counters-item">
-					<i class="tf-ion-ios-alarm-outline"></i>
-					<div>
-						<span class="counter" data-count="150">0</span>
-					</div>
-					<h3>Happy Clients</h3>
-				</div>
-			</div>
-			<!-- end first count item -->
-
-			<!-- second count item -->
-			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-				<div class="counters-item">
-					<i class="tf-ion-ios-analytics-outline"></i>
-					<div>
-						<span class="counter" data-count="130">0</span>
-					</div>
-					<h3>Projects completed</h3>
-				</div>
-			</div>
-			<!-- end second count item -->
-
-			<!-- third count item -->
-			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-				<div class="counters-item">
-					<i class="tf-ion-ios-compose-outline"></i>
-					<div>
-						<span class="counter" data-count="99">0</span>
-					</div>
-					<h3>Positive feedback</h3>
-
-				</div>
-			</div>
-			<!-- end third count item -->
-
-			<!-- fourth count item -->
-			<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
-				<div class="counters-item kill-border">
-					<i class="tf-ion-ios-bolt-outline"></i>
-					<div>
-						<span class="counter" data-count="250">0</span>
-					</div>
-					<h3>Cups of Coffee</h3>
-				</div>
-			</div>
-			<!-- end fourth count item -->
-		</div> <!-- end row -->
-	</div> <!-- end container -->
-</section> <!-- end section -->
-
-<!-- Start Testimonial
-=========================================== -->
-		
-	<section class="testimonial section" id="testimonial">
-		<div class="container">
-			<div class="row">				
-				<div class="col-lg-12">
-					<!-- testimonial wrapper -->
-					<div class="testimonial-slider">
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							<div class="client-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
-							</div>
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img loading="lazy" src="images/client-logo/clients-1.jpg" class="img-fluid" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>William Martin</h3>
-								<span>CEO , Company Name</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-				
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							<div class="client-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
-							</div>
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img loading="lazy" src="images/client-logo/clients-2.jpg" class="img-fluid" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Emma Harrison</h3>
-								<span>CEO , Company Name</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-					
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							<div class="client-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
-							</div>
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img loading="lazy" src="images/client-logo/clients-3.jpg" class="img-fluid" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Alexander Lucas</h3>
-								<span>CEO , Company Name</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-					</div>
-				</div> 		<!-- end col lg 12 -->
-			</div>	    <!-- End row -->
-		</div>       <!-- End container -->
-	</section>    <!-- End Section -->
-
-<!--
-Start Blog Section
-=========================================== -->
-<section class="blog" id="blog">
-	<div class="container">
-		<div class="row justify-content-center">
-			<!-- section title -->
-			<div class="col-xl-6 col-lg-8">
-				<div class="title text-center ">
-					<h2> Latest <span class="color">Posts</span></h2>
-					<div class="border"></div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus facere accusamus, reprehenderit libero inventore nam.</p>
-				</div>
-			</div>
-			<!-- /section title -->
-		</div>
-
-		<div class="row">
-			<!-- single blog post -->
-			<article class="col-lg-4 col-md-6">
-				<div class="post-item">
-					<div class="media-wrapper">
-						<img loading="lazy" src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
-					</div>
-
-					<div class="content">
-						<h3><a href="single-post.html">Reasons to Smile</a></h3>
-						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-							moon officia aute, non skateboard dolor brunch.</p>
-						<a class="btn btn-main" href="single-post.html">Read more</a>
-					</div>
-				</div>
-			</article>
-			<!-- /single blog post -->
-
-			<!-- single blog post -->
-			<article class="col-lg-4 col-md-6">
-				<div class="post-item">
-					<div class="media-wrapper">
-						<img loading="lazy" src="images/blog/post-2.jpg" alt="amazing caves coverimage" class="img-fluid">
-					</div>
-
-					<div class="content">
-						<h3><a href="single-post.html">A Few Moments</a></h3>
-						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-							moon officia aute, non skateboard dolor brunch.</p>
-						<a class="btn btn-main" href="single-post.html">Read more</a>
-					</div>
-				</div>
-			</article>
-			<!-- end single blog post -->
-
-			<!-- single blog post -->
-			<article class="col-lg-4 col-md-6">
-				<div class="post-item">
-					<div class="media-wrapper">
-						<img loading="lazy" src="images/blog/post-3.jpg" alt="amazing caves coverimage" class="img-fluid">
-					</div>
-
-					<div class="content">
-						<h3><a href="single-post.html">Hints for Life</a></h3>
-						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-							moon officia aute, non skateboard dolor brunch.</p>
-						<a class="btn btn-main" href="single-post.html">Read more</a>
-					</div>
-				</div>
-			</article>
-			<!-- end single blog post -->
-		</div> <!-- end row -->
-	</div> <!-- end container -->
-</section> <!-- end section -->
-
-<footer id="footer" class="bg-one">
-  <div class="top-footer">
-    <div class="container">
-      <div class="row justify-content-around">
-        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-          <h3>about</h3>
-          <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
-        </div>
-        <!-- End of .col-sm-3 -->
-
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <ul>
-            <li>
-              <h3>Our Services</h3>
-            </li>
-            <li><a href="service.html">Ui/Ux Design</a></li>
-            <li><a href="service.html">Graphic Design</a></li>
-            <li><a href="service.html">Web Design</a></li>
-            <li><a href="service.html">Web Development</a></li>
-          </ul>
-        </div>
-        <!-- End of .col-sm-3 -->
-
-        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-          <ul>
-            <li>
-              <h3>Quick Links</h3>
-            </li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="blog.html">Blogs</a></li>
-            <li><a href="404.html">404</a></li>
-          </ul>
-        </div>
-        <!-- End of .col-sm-3 -->
-
-        <div class="col-lg-3 col-md-6">
-          <ul>
-            <li>
-              <h3>Connect with us Socially</h3>
-            </li>
-            <li><a href="https://www.facebook.com/themefisher/">Facebook</a></li>
-            <li><a href="https://www.twitter.com/themefisher/">Twitter</a></li>
-            <li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA">Youtube</a></li>
-            <li><a href="https://www.github.com/themefisher/">Github</a></li>
-          </ul>
-        </div>
-        <!-- End of .col-sm-3 -->
-
-      </div>
-    </div> <!-- end container -->
-  </div>
-  <div class="footer-bottom">
-    <h5>&copy; Copyright 2020. All rights reserved.</h5>
-    <h6>Design and Developed by <a href="https://themefisher.com/">Themefisher</a></h6>
-  </div>
-</footer> <!-- end footer -->
+      fileInputWrapper.addEventListener("click", () => fileInput.click());
+      fileInputWrapper.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        fileInputWrapper.classList.add("dragover");
+      });
+      fileInputWrapper.addEventListener("dragleave", () => {
+        fileInputWrapper.classList.remove("dragover");
+      });
+      fileInputWrapper.addEventListener("drop", (e) => {
+        e.preventDefault();
+        fileInputWrapper.classList.remove("dragover");
+        const file = e.dataTransfer.files[0];
+        if (file) {
+          fileInput.files = e.dataTransfer.files;
+          fileText.textContent = file.name;
+        }
+      });
+      fileInput.addEventListener("change", () => {
+        const file = fileInput.files[0];
+        if (file) {
+          fileText.textContent = file.name;
+        }
+      });
 
 
-<!-- end Footer Area
-========================================== -->
+      document.getElementById("registrationForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitButton = form.querySelector('input[type="submit"]');
+        submitButton.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+        const formData = {
+          appliedFor: form.appliedFor.value,
+          studentFirstName: form.studentFirstName.value,
+          studentLastName: form.studentLastName.value,
+          dob: form.dob.value,
+          grade: form.grade.value,
+          address: form.address.value,
+          previousSchool: form.previousSchool.value,
+          parentFirstName: form.parentFirstName.value,
+          parentLastName: form.parentLastName.value,
+          parentPhone: form.parentPhone.value,
+          parentEmail: form.parentEmail.value,
+          contactMethod: form.contactMethod.value,
+          callTime: form.callTime.value,
+          referralSource: form.referralSource.value
+        };
 
-<!-- 
-    Essential Scripts
-    =====================================-->
-<!-- Main jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+        const file = fileInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function() {
+            progressBar.style.display = "block";
+            output.innerText = "Uploading file...";
 
-<!-- Bootstrap4 -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- Parallax -->
-<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-<!-- lightbox -->
-<script src="plugins/lightbox2/js/lightbox.min.js"></script>
-<!-- Owl Carousel -->
-<script src="plugins/slick/slick.min.js"></script>
-<!-- filter -->
-<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-<!-- Smooth Scroll js -->
-<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
-<script src="plugins/google-map/gmap.js"></script>
+            // Simulated progress animation
+            let width = 0;
+            progressFill.style.width = "0%";
+            const interval = setInterval(() => {
+              if (width >= 90) {
+                clearInterval(interval);
+              } else {
+                width += 1;
+                progressFill.style.width = width + "%";
+              }
+            }, 30);
 
-<!-- Custom js -->
-<script src="js/script.js"></script>
-
-</body>
-
+            const fileData = reader.result;
+            output.innerText = "Uploading file...";
+            
+            fetch("https://script.google.com/macros/s/AKfycbyRQSGMFjLSlhFA3hL-gqzWd5pbcK_aDmW1R4VVhvCCHdtHk3mHzJzU1b1uJEGPt3e2KQ/exec", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: new URLSearchParams({
+                appliedFor: form.appliedFor.value,
+                studentFirstName: form.studentFirstName.value,
+                studentLastName: form.studentLastName.value,
+                dob: form.dob.value,
+                grade: form.grade.value,
+                address: form.address.value,
+                previousSchool: form.previousSchool.value,
+                parentFirstName: form.parentFirstName.value,
+                parentLastName: form.parentLastName.value,
+                parentPhone: form.parentPhone.value,
+                parentEmail: form.parentEmail.value,
+                contactMethod: form.contactMethod.value,
+                callTime: form.callTime.value,
+                referralSource: form.referralSource.value,
+                fileName: file?.name,
+                fileData: fileData || null
+              }), 
+            })
+            .then(res => res.text())
+            .then(response => {
+              output.innerText = "Uploaded Succesfully";
+              document.getElementById('thankYou').style.display = 'block';
+              form.reset();
+              fileText.textContent = "Click or drop a file here";
+              progressBar.style.display = "none";
+              submitButton.disabled = false;
+            })
+            .catch(err => {
+              output.innerText = "Error: " + err;
+              submitButton.disabled = false;
+            });
+          };
+          reader.readAsDataURL(file);
+        } else {
+          output.innerText = "No file uploaded.";
+          form.reset();
+          submitButton.disabled = false;   
+        }
+      });
+    </script>
+  </body>
 </html>
+
+   
