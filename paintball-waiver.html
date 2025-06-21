@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <title>Paintball Waiver – Lighthouse Schools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Lighthouse Fun Center">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Lighthouse">
+  <meta name="generator" content="Lighthouse">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
+  
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+    form {
+      max-width: 900px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: auto;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    #signature-pad {
+      border: 2px dashed #ccc;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      background: #007BFF;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-clear {
+      background: #dc3545;
+      margin-left: 10px;
+    }
+  </style> -->
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #signature-pad{
+      width: 50%; height: 150px; 
+      border: 2px dashed #ccc; 
+      display: block;
+    }
+    @media (max-width: 768px) {
+      #signature-pad{
+        width: 75%;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <form class="container" id="waiverForm">
+    <h2>Paintball Waiver – Lighthouse Schools</h2> 
+
+    <div class="">
+      <strong>Lighthouse Schools Paintball Waiver and Release of Liability</strong><br><br>
+      READ CAREFULLY – THIS IS A LEGAL DOCUMENT<br><br>
+      By signing this form, you acknowledge and agree to the following:<br><br>
+      1. <strong>Assumption of Risk</strong><br>
+      I, the undersigned participant (or parent/legal guardian if under 18), acknowledge that participation in
+      paintball activities hosted by Lighthouse Schools involves inherent risks, including but not limited to:
+      Being struck by paintballs, slipping, falling, equipment malfunction, outdoor terrain hazards,
+      heat exhaustion, dehydration, or physical injury. I fully understand these risks and voluntarily
+      assume all responsibility for any injury, damage, or loss incurred.<br><br>
+      2. <strong>Release of Liability</strong><br>
+      I release Lighthouse Schools, its staff, volunteers, affiliates, and property owners from any and all
+      liability, even if due to negligence.<br><br>
+      3. <strong>Indemnification</strong><br>
+      I agree to hold harmless Lighthouse Schools and related parties for any damages or claims arising
+      from my participation or that of a minor.<br><br>
+      4. <strong>Rules and Equipment Use</strong><br>
+      I will follow all safety rules, wear safety gear, and act responsibly. Failure to comply may result in
+      removal without refund.<br><br>
+      5. <strong>Medical Fitness & Emergency Care</strong><br>
+      I confirm I am fit for paintball and authorize emergency medical care if needed.<br><br>
+      
+      6. <strong>Media Release</strong><br>
+      I allow Lighthouse Schools to use event photos/videos in promotional materials.<br><br>
+      7. <strong>Final Agreement</strong><br>
+      I HAVE READ AND UNDERSTOOD THIS WAIVER AND SIGN IT FREELY. I AM WAIVING CERTAIN LEGAL RIGHTS BY SIGNING.
+    </div>
+    
+    <div class="form-row mt-5"> 
+      <div class="form-group col">
+        <label for="playerFirstName">First Name</label>
+        <input type="text" id="playerFirstName" name="playerFirstName" class="form-control" placeholder="First name" required>
+      </div>
+      <div class="form-group col">
+        <label for="playerLastName">Last Name</label>
+        <input type="text"  class="form-control" placeholder="Last name" id="playerLastName" name="playerLastName" required>
+      </div> 
+    </div>
+
+     <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="minorConsent">
+      <label class="form-check-label" for="minorConsent">
+        If signing for a minor, I certify I am the legal guardian
+      </label>
+    </div>
+    <div id="moreInputs" class="row hidden mt-4">
+      <div class="form-group col">
+        <label for="guardianFirstName">Guardian First Name</label>
+        <input type="text" id="guardianFirstName" name="guardianFirstName" class="form-control" placeholder="First name" >
+      </div>
+      <div class="form-group col">
+        <label for="guardianLastName">Guardian Last Name</label>
+        <input type="text"  class="form-control" placeholder="Last name" id="guardianLastName" name="guardianLastName" >
+      </div> 
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email">
+    </div>
+
+    <label>
+      <input type="checkbox" id="agree" required>
+      I have read and agree to the waiver terms.
+    </label>
+
+    <div class="my-4">
+      <label>Draw Your Signature Below:</label>
+    <canvas id="signature-pad" ></canvas>
+    </div>
+
+
+    <input type="hidden" name="signature" id="signature">
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" id="clear">Clear Signature</button>
+  </form>
+
+  <!-- Signature Pad JS -->
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+   <script>
+    const canvas = document.getElementById("signature-pad");
+    const signaturePad = new SignaturePad(canvas);
+    const form = document.getElementById("waiverForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (signaturePad.isEmpty()) {
+        alert("Please sign the waiver before submitting.");
+        return;
+      }
+
+      const signatureDataUrl = signaturePad.toDataURL();
+      document.getElementById("signature").value = signatureDataUrl;
+
+      // Example fetch to AWS Lambda/API Gateway endpoint
+      fetch("https://your-api-url.amazonaws.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: form.playerFirstName.value,
+          lastName: form.playerLastName.value,
+          guardianFirstName: form.guardianFirstName.value,
+          guardianLastName: form.guardianLastName.value,
+          email: form.email.value,
+          agree: form.agree.checked,
+          signature: signatureDataUrl
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("Waiver submitted successfully!");
+        form.reset();
+        signaturePad.clear();
+      })
+      .catch(err => {
+        alert("Error submitting form.");
+        console.error(err);
+      });
+    });
+
+     document.getElementById("clear").addEventListener("click", () => {
+      signaturePad.clear();
+    });
+
+  function resizeCanvas() {
+    const ratio = window.devicePixelRatio || 1;
+
+    // Get the CSS size
+    const cssWidth = canvas.offsetWidth;
+    const cssHeight = canvas.offsetHeight;
+
+    // Set canvas width/height based on device ratio
+    canvas.width = cssWidth * ratio;
+    canvas.height = cssHeight * ratio;
+
+    // Reset transform before scaling
+    const context = canvas.getContext("2d");
+    context.setTransform(1, 0, 0, 1, 0, 0); 
+    context.scale(ratio, ratio);
+
+    signaturePad.clear();
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas(); // Run once on page load
+
+  //minor consent
+  const checkbox = document.getElementById("minorConsent");
+  const moreInputs = document.getElementById("moreInputs");
+
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      moreInputs.classList.remove("hidden");
+       document.getElementById("guardianFirstName").required = true;
+      document.getElementById("guardianLastName").required = true;
+    } else {
+      moreInputs.classList.add("hidden");
+      document.getElementById("guardianFirstName").required = false;
+      document.getElementById("guardianLastName").required = false;
+    }
+  });
+</script>
+<!-- jqueery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap4 -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+
+</body>
+</html>
