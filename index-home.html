@@ -7,6 +7,7 @@
   <title>Document</title>
 </head>
 <body style="margin: 0; padding: 0; overflow: hidden; width: 100vw; height: 100vh; box-sizing: border-box; font-family: Arial, sans-serif; max-width: 600px;">
+
 <div id="uploadForm" style="width: 100%; height: 100%; overflow: hidden; font-family: 'Poppins', sans-serif; padding: 40px 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; box-sizing: border-box;">
 <div style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 100%; max-width: 700px;"><form id="registrationForm">
 <div style="font-weight: 500; padding: 12px 0; font-size: 1.2rem;">Applying For</div>
@@ -76,142 +77,146 @@
 <input style="background: #007bff; color: white; border: none; padding: 14px; border-radius: 6px; font-size: 16px; cursor: pointer; width: 100%;" required="" type="submit" value="Apply" />
 
 </form></div>
+
+
+</div>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
   // All DOM elements are ready here
     
-const fileInputWrapper = document.getElementById("fileInputWrapper");
-const fileInput = document.getElementById("fileInput");
-const fileText = fileInputWrapper.querySelector(".file-text");
-const progressBar = document.getElementById("progressBar");
-const progressFill = document.getElementById("progressFill");
-const output = document.getElementById("output");
+  const fileInputWrapper = document.getElementById("fileInputWrapper");
+  const fileInput = document.getElementById("fileInput");
+  const fileText = fileInputWrapper.querySelector(".file-text");
+  const progressBar = document.getElementById("progressBar");
+  const progressFill = document.getElementById("progressFill");
+  const output = document.getElementById("output");
 
-fileInputWrapper.addEventListener("click", () => fileInput.click());
-fileInputWrapper.addEventListener("dragover", (e) => {
-e.preventDefault();
-fileInputWrapper.classList.add("dragover");
-});
-fileInputWrapper.addEventListener("dragleave", () => {
-fileInputWrapper.classList.remove("dragover");
-});
-fileInputWrapper.addEventListener("drop", (e) => {
-e.preventDefault();
-fileInputWrapper.classList.remove("dragover");
-const file = e.dataTransfer.files[0];
-if (file) {
-fileInput.files = e.dataTransfer.files;
-fileText.textContent = file.name;
-}
-});
-fileInput.addEventListener("change", () => {
-const file = fileInput.files[0];
-if (file) {
-fileText.textContent = file.name;
-}
-});
-
-
-document.getElementById("registrationForm").addEventListener("submit", function(e) {
-e.preventDefault();
-const form = e.target;
-const submitButton = form.querySelector('input[type="submit"]');
-submitButton.disabled = true;  // Disable the submit button to prevent multiple clicks
-
-const file = fileInput.files[0];
-if (file) {
-if (file.size > 5 * 1024 * 1024) {
-output.innerText = "File too large (max 5MB).";
-submitButton.disabled = false;
-return;
-}
-const allowedTypes = ["application/pdf", "image/jpeg", "image/png", "image/jpg",];
-if (!allowedTypes.includes(file.type)) {
-output.innerText = "Invalid file type.";
-submitButton.disabled = false;
-return;
-} }
-
-if (file) {
-const reader = new FileReader();
-reader.onload = function() {
-progressBar.style.display = "block";
-output.innerText = "Uploading file...";
-
-// Simulated progress animation
-let width = 0;
-progressFill.style.width = "0%";
-const interval = setInterval(() => {
-if (width >= 90) {
-clearInterval(interval);
-} else {
-width += 1;
-progressFill.style.width = width + "%";
-}
-}, 30);
+  fileInputWrapper.addEventListener("click", () => fileInput.click());
+  fileInputWrapper.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  fileInputWrapper.classList.add("dragover");
+  });
+  fileInputWrapper.addEventListener("dragleave", () => {
+  fileInputWrapper.classList.remove("dragover");
+  });
+  fileInputWrapper.addEventListener("drop", (e) => {
+  e.preventDefault();
+  fileInputWrapper.classList.remove("dragover");
+  const file = e.dataTransfer.files[0];
+  if (file) {
+  fileInput.files = e.dataTransfer.files;
+  fileText.textContent = file.name;
+  }
+  });
+  fileInput.addEventListener("change", () => {
+  const file = fileInput.files[0];
+  if (file) {
+  fileText.textContent = file.name;
+  }
+  });
 
 
+  document.getElementById("registrationForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const submitButton = form.querySelector('input[type="submit"]');
+  submitButton.disabled = true;  // Disable the submit button to prevent multiple clicks
+  submitButton.value = "Submitting...";
+  
+  const file = fileInput.files[0];
+  if (file) {
+  if (file.size > 5 * 1024 * 1024) {
+  output.innerText = "File too large (max 5MB).";
+  submitButton.disabled = false;
+  return;
+  }
+  const allowedTypes = ["application/pdf", "image/jpeg", "image/png", "image/jpg",];
+  if (!allowedTypes.includes(file.type)) {
+  output.innerText = "Invalid file type.";
+  submitButton.disabled = false;
+  return;
+  } }
 
-const fileData = reader.result;
-output.innerText = "Uploading file...";
+  if (file) {
+  const reader = new FileReader();
+  reader.onload = function() {
+  progressBar.style.display = "block";
+  output.innerText = "Uploading file...";
 
-fetch("https://script.google.com/macros/s/AKfycbwMZ7OcnMEuVHxDcjZ24ZkDUVH3xA3nHMzXWqS2sYvzU_RNq7VYMm9SOpOwc-zrQks74g/exec", {
-method: "POST",
-headers: {
-"Content-Type": "application/x-www-form-urlencoded"
-},
-body: new URLSearchParams({
-appliedFor: form.appliedFor.value,
-studentFirstName: form.studentFirstName.value,
-studentLastName: form.studentLastName.value,
-dob: form.dob.value,
-grade: form.grade.value,
-address: form.address.value,
-previousSchool: form.previousSchool.value,
-parentFirstName: form.parentFirstName.value,
-parentLastName: form.parentLastName.value,
-parentPhone: form.parentPhone.value,
-parentEmail: form.parentEmail.value,
-contactMethod: form.contactMethod.value,
-callTime: form.callTime.value,
-referralSource: form.referralSource.value,
-fileName: file?.name,
-fileData: fileData || null
-}).toString(), 
-})
-.then(res => res.text())
-.then(text => {
-  output.innerText = text;
-})
-.then(response => {
+  // Simulated progress animation
+  let width = 0;
+  progressFill.style.width = "0%";
+  const interval = setInterval(() => {
+  if (width >= 90) {
+  clearInterval(interval);
+  } else {
+  width += 1;
+  progressFill.style.width = width + "%";
+  }
+  }, 30);
 
-document.getElementById('thankYou').style.display = 'block';
 
-form.reset();
-fileText.textContent = "Click or drop a file here";
-progressBar.style.display = "none";
-submitButton.disabled = false;
-})
-.catch(err => {
 
-submitButton.disabled = false;
-});
-};
-reader.readAsDataURL(file);
-} else {
-output.innerText = "No file uploaded.";
-form.reset();
-submitButton.disabled = false;   
-}
-});
+  const fileData = reader.result;
+  output.innerText = "Uploading file...";
+
+  fetch("https://script.google.com/macros/s/AKfycbwMZ7OcnMEuVHxDcjZ24ZkDUVH3xA3nHMzXWqS2sYvzU_RNq7VYMm9SOpOwc-zrQks74g/exec", {
+  method: "POST",
+  headers: {
+  "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: new URLSearchParams({
+  appliedFor: form.appliedFor.value,
+  studentFirstName: form.studentFirstName.value,
+  studentLastName: form.studentLastName.value,
+  dob: form.dob.value,
+  grade: form.grade.value,
+  address: form.address.value,
+  previousSchool: form.previousSchool.value,
+  parentFirstName: form.parentFirstName.value,
+  parentLastName: form.parentLastName.value,
+  parentPhone: form.parentPhone.value,
+  parentEmail: form.parentEmail.value,
+  contactMethod: form.contactMethod.value,
+  callTime: form.callTime.value,
+  referralSource: form.referralSource.value,
+  fileName: file?.name,
+  fileData: fileData || null
+  }).toString(), 
+  })
+  .then(res => res.text())
+  .then(text => {
+    output.innerText = text;
+  })
+  .then(response => {
+
+  document.getElementById('thankYou').style.display = 'block';
+
+  form.reset();
+  fileText.textContent = "Click or drop a file here";
+  progressBar.style.display = "none";
+  submitButton.disabled = false;
+  submitButton.value = "Submit";
+  })
+  .catch(err => {
+
+  submitButton.disabled = false;  
+  submitButton.value = "Submit";
+  });
+  };
+  reader.readAsDataURL(file);
+  } else {
+  output.innerText = "No file uploaded.";
+  form.reset();
+  submitButton.disabled = false;
+  submitButton.value = "Submit";   
+  }
+  });
   //All DOM elements ends here
 });
 
 </script>
-
-</div>
-
-
 
 </body>
 </html>
