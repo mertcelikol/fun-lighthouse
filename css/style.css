@@ -434,12 +434,24 @@ a:focus, a:hover {
 
 
 .single-page-header { 
-  background-image: url("../assets/paintball-figth.mp4");
-  background-size:100%;
+  background-image: url("../assets/camping2.jpeg");
+  background-size:cover;
+  background-position: 50% 33%;    
+  background-repeat: no-repeat; 
   padding: 140px 0 70px;
   text-align: center;
   color: #fff; 
   position: relative;
+}
+#soccer { 
+  background-image: url("../assets/indoor-soccer.jpg");
+    background-size:cover;
+  background-position: 50% 50%;   
+}
+#court { 
+  background-image: url("../assets/gym1.jpeg");
+    background-size:cover;
+  background-position: 50% 70%;   
 }
 .single-page-header:before {
   background: rgba(0, 0, 0, 0.1);
